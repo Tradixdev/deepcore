@@ -3,7 +3,7 @@ import { MarqueeAgent } from "./MarqueeAgent";
 
 const Categories = () => {
   return (
-    <section className="py-40">
+    <section className="px-5 lg:px-0 py-20 lg:py-40">
       <div className="max-w-7xl space-y-10 mx-auto">
         <div className="space-y-4 text-center">
           <h2 className="text-6xl font-semibold mt-4">Agent Categories</h2>

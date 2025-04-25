@@ -45,16 +45,16 @@ const Hero = () => {
       data-scroll-speed="2"
       className="min-h-screen relative"
     >
-      <div className="max-w-7xl flex items-center pt-[150px] mx-auto">
+      <div className="max-w-7xl flex items-center pt-[100px] lg:pt-[150px] mx-5 lg:mx-auto">
         <div className="w-full space-y-8">
           <div className=" flex flex-col">
             <div className="overflow-hidden">
               <h1
                 ref={headingRef1}
-                className="text-7xl font-medium tracking-tight leading-snug"
+                className="text-4xl lg:text-7xl font-medium tracking-tight leading-snug"
               >
                 The Best{" "}
-                <span className="italic font-bold bg-gradient-to-b from-[#EAFC35] to-[#fcffdf] bg-clip-text pr-5 text-transparent">
+                <span className="lg:italic font-bold bg-gradient-to-b from-[#EAFC35] to-[#fcffdf] bg-clip-text pr-5 text-transparent">
                   Web3 AI Agent Platform
                 </span>{" "}
               </h1>
@@ -62,7 +62,7 @@ const Hero = () => {
             <div className="overflow-hidden">
               <h1
                 ref={headingRef2}
-                className="text-7xl font-medium tracking-tight leading-snug"
+                className="text-5xl lg:text-7xl font-medium tracking-tight leading-snug"
               >
                 MCP-Powered
               </h1>
@@ -94,7 +94,7 @@ const Hero = () => {
       <div
         data-scroll
         data-scroll-speed="-1"
-        className="w-full h-full absolute top-0 left-0 -z-10"
+        className="w-full h-screen lg:h-full absolute top-0 left-0 -z-10"
         ref={videoRef1}
       >
         <video
@@ -102,11 +102,11 @@ const Hero = () => {
           autoPlay
           muted
           loop
-          className="w-full h-auto"
+          className="w-full h-full object-cover"
         />
         {/* <div className="absolute hero top-0 left-0 min-h-screen w-full z-10 "></div> */}
       </div>
-      <div className="max-w-7xl mx-auto mt-[300px] text-center space-y-10">
+      <div className="max-w-7xl mx-auto mt-[400px] lg:mt-[300px] text-center space-y-10">
         <h3 className="max-w-80 mx-auto text-xl text-[#b2b2b2]">
           Supported by cutting-edge encryption and AI technology
         </h3>

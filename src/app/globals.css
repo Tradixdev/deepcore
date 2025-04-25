@@ -179,13 +179,21 @@
 
 html,
 body {
-  height: 100%;
+  height: auto;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    overflow: auto;
+  }
 }
 
 [data-scroll-container] {
   min-height: 100vh;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    overflow: auto;
+  }
 }
 
 .hero {

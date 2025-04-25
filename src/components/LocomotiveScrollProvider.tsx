@@ -1,12 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const isMobileDevice = () => {
+  if (typeof window === "undefined") return false;
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+    navigator.userAgent
+  );
+};
 
 export default function LocomotiveScrollProvider({
   children,
@@ -14,8 +21,17 @@ export default function LocomotiveScrollProvider({
   children: React.ReactNode;
 }) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [hasMounted, setHasMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true);
+    setIsMobile(isMobileDevice());
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted || isMobile) return;
+
     let scroll: any;
 
     const initScroll = async () => {
@@ -26,7 +42,7 @@ export default function LocomotiveScrollProvider({
           el: scrollRef.current,
           smooth: true,
           lerp: 0.1,
-          multiplier: 1, // optional: adjust scroll speed
+          multiplier: 1,
         });
 
         scroll.on("scroll", ScrollTrigger.update);
@@ -61,10 +77,18 @@ export default function LocomotiveScrollProvider({
         ScrollTrigger.removeEventListener("refresh", () => scroll.update());
       }
     };
-  }, []);
+  }, [hasMounted, isMobile]);
+
+  if (!hasMounted) return null;
 
   return (
-    <div data-scroll-container ref={scrollRef} className="relative">
+    <div
+      data-scroll-container
+      ref={scrollRef}
+      className={`relative ${
+        isMobile ? "overflow-auto h-full min-h-screen" : ""
+      }`}
+    >
       {children}
     </div>
   );

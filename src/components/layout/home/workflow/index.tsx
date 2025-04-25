@@ -46,12 +46,12 @@ const cards = [
 
 const Workflow = () => {
   return (
-    <section className="bg-[#EAFC35] py-20 overflow-hidden">
+    <section className="bg-[#EAFC35] py-5 lg:py-20 overflow-hidden">
       <div className="flex flex-col md:flex-row relative gap-10 md:gap-20">
         <div
           data-scroll
           data-scroll-speed="-5"
-          className="w-full md:w-1/2 sticky top-40 flex flex-col items-center h-fit"
+          className="w-full md:w-1/2 lg:sticky top-40 flex flex-col items-center h-fit"
         >
           <Image
             src="/images/workflow.svg"
@@ -64,7 +64,7 @@ const Workflow = () => {
           </h1>
         </div>
 
-        <div className="md:w-1/2 flex flex-col gap-5 w-full">
+        <div className="md:w-1/2 px-5 lg:px-0 flex flex-col gap-5 w-full">
           {cards.map((card) => (
             <div
               key={card.title}
