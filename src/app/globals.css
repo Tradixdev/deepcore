@@ -57,6 +57,30 @@
       background-position: 200%;
     }
   }
+
+  --animate-marquee: marquee var(--duration) infinite linear;
+
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 :root {
@@ -166,4 +190,8 @@ body {
 
 .hero {
   background-image: radial-gradient(circle closest-corner at 50% 0%, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0.9));
+}
+
+.clip-custom {
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
 }
