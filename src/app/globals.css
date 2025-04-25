@@ -152,3 +152,18 @@
     background-color: rgb(234 252 53 / var(--tw-bg-opacity, 1));
   }
 }
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-scroll-container] {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  background-image: radial-gradient(circle closest-corner at 50% 0%, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0.9));
+}

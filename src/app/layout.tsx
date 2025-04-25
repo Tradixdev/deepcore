@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
+import LocomotiveScrollProvider from "@/components/LocomotiveScrollProvider";
 
 const monaSans = Mona_Sans({
   subsets: ["latin"],
@@ -28,9 +29,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <LocomotiveScrollProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </LocomotiveScrollProvider>
         </ThemeProvider>
       </body>
     </html>
