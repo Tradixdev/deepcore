@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
 import LocomotiveScrollProvider from "@/components/LocomotiveScrollProvider";
+import { Toaster } from "react-hot-toast";
 
 const monaSans = Mona_Sans({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
           <LocomotiveScrollProvider>
             <Navbar />
             {children}
+            <Toaster position="bottom-right" />
             <Footer />
           </LocomotiveScrollProvider>
         </ThemeProvider>

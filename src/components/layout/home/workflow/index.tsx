@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SpotlightCard from "@/components/magicui/SpotlightCard/SpotlightCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,11 +47,11 @@ const cards = [
 
 const Workflow = () => {
   return (
-    <section className="bg-[#EAFC35] py-5 lg:py-20 overflow-hidden">
-      <div className="flex flex-col md:flex-row relative gap-10 md:gap-20">
+    <section className="bg-[#EAFC35] py-5 lg:py-20 lg:overflow-hidden">
+      <div className="flex flex-col md:flex-row gap-10 md:gap-20">
         <div
           data-scroll
-          data-scroll-speed="-5"
+          data-scroll-speed="-10"
           className="w-full md:w-1/2 lg:sticky top-40 flex flex-col items-center h-fit"
         >
           <Image
@@ -66,11 +67,11 @@ const Workflow = () => {
 
         <div className="md:w-1/2 px-5 lg:px-0 flex flex-col gap-5 w-full">
           {cards.map((card) => (
-            <div
+            <SpotlightCard
               key={card.title}
               data-scroll
               data-scroll-speed="4"
-              className="bg-black text-white p-8 transition-all duration-100 w-full clip-custom max-w-[520px] shadow-2xl"
+              className="bg-black border-amber-300 text-white p-8 transition-all duration-100 w-full clip-custom max-w-[520px] shadow-2xl"
             >
               <h2 className="text-3xl font-bold mb-2">{card.title}</h2>
               <p className="text-lg mb-4">{card.description}</p>
@@ -95,7 +96,7 @@ const Workflow = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

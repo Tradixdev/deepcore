@@ -102,6 +102,7 @@ const Hero = () => {
           autoPlay
           muted
           loop
+          controls={false}
           className="w-full h-full object-cover"
         />
         {/* <div className="absolute hero top-0 left-0 min-h-screen w-full z-10 "></div> */}

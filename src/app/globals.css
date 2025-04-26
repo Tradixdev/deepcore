@@ -58,7 +58,34 @@
     }
   }
 
+  @keyframes star-movement-bottom {
+    '0%': {
+      transform: 'translate(0%, 0%)';
+      opacity: '1';
+    }
+
+    '100%': {
+      transform: 'translate(-100%, 0%)';
+      opacity: '0';
+    }
+  }
+
+  @keyframes star-movement-top {
+    '0%': {
+      transform: 'translate(0%, 0%)';
+      opacity: '1';
+    }
+
+    '100%': {
+      transform: 'translate(100%, 0%)';
+      opacity: '0';
+    }
+  }
+
   --animate-marquee: marquee var(--duration) infinite linear;
+
+  --star-movement-bottom: star-movement-bottom linear infinite alternate;
+  --star-movement-top: star-movement-top linear infinite alternate;
 
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
@@ -202,4 +229,13 @@ body {
 
 .clip-custom {
   clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+}
+
+.clip-custom-left {
+  clip-path: polygon(0 0,
+      calc(100% - 30px) 0,
+      100% 30px,
+      100% 100%,
+      30px 100%,
+      0 calc(100% - 30px));
 }
