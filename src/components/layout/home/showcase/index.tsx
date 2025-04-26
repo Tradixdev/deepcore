@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import Card from "./Card";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import toast from "react-hot-toast";
+// mport toast from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger);
 
