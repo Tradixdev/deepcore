@@ -66,7 +66,7 @@ const Workflow = () => {
             width={200}
             height={200}
           />
-          <h1 className="text-6xl text-center font-semibold text-foreground mt-4">
+          <h1 className="text-6xl text-shadow-white text-center font-semibold text-foreground mt-4">
             Workflow
           </h1>
         </div>
