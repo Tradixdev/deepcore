@@ -78,7 +78,7 @@ func main() {
         <section className="px-5 lg:px-0 py-20 lg:py-40">
             <div className="max-w-7xl space-y-10 relative mx-auto">
                 <div className="space-y-4 text-center">
-                    <h2 className="text-6xl text-shadow-white font-semibold mt-4">Using Tradix's advanced features</h2>
+                    <h2 className="text-6xl text-shadow-white font-semibold mt-4">Using Tradix&apos;s advanced features</h2>
                     <p className="text-[#b2b2b2] text-xl max-w-2xl mx-auto">
                         CASE: This is a case study, if you can code, you can generate a more advanced AI agent based on the platform 0 code, here is the case study.
                     </p>
