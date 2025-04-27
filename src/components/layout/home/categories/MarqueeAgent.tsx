@@ -68,7 +68,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-80 cursor-pointer clip-custom overflow-hidden border border-yellow-400/70 px-8 py-4",
+        "relative h-full w-80 cursor-pointer clip-custom overflow-hidden border border-[#00C9A7] px-8 py-4",
         // light styles
         " bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
@@ -115,6 +115,7 @@ export function MarqueeAgent() {
       </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      
     </div>
   );
 }

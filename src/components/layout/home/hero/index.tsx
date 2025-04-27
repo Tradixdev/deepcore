@@ -51,10 +51,10 @@ const Hero = () => {
             <div className="overflow-hidden">
               <h1
                 ref={headingRef1}
-                className="text-4xl lg:text-7xl font-medium tracking-tight leading-snug"
+                className="text-4xl  lg:text-7xl font-medium tracking-tight leading-snug"
               >
                 The Best{" "}
-                <span className="lg:italic font-bold bg-gradient-to-b from-[#EAFC35] to-[#fcffdf] bg-clip-text pr-5 text-transparent">
+                <span className="lg:italic font-bold bg-gradient-to-b from-[#00C9A7] to-[#fcffdf] bg-clip-text pr-5 text-transparent">
                   Web3 AI Agent Platform
                 </span>{" "}
               </h1>
@@ -107,11 +107,11 @@ const Hero = () => {
         />
         {/* <div className="absolute hero top-0 left-0 min-h-screen w-full z-10 "></div> */}
       </div>
-      <div className="max-w-7xl mx-auto mt-[400px] lg:mt-[300px] text-center space-y-10">
+      <div className="w-full mx-auto mt-[400px] lg:mt-[300px] text-center space-y-10">
         <h3 className="max-w-80 mx-auto text-xl text-[#b2b2b2]">
           Supported by cutting-edge encryption and AI technology
         </h3>
-        <Marquee autoFill gradient gradientColor="black" className="-z-10">
+        <Marquee autoFill gradient gradientColor="" className="-z-10">
           <Image
             src={"/images/9919.png"}
             alt="Twitter"

@@ -239,3 +239,34 @@ body {
       30px 100%,
       0 calc(100% - 30px));
 }
+
+.text-shadow-white {
+  text-shadow: 0 1px 10px rgba(0, 87, 255, 0.6), 0 -5px 15px rgba(255, 198, 168, 0.4), 0 0 10px rgba(255, 255, 255, .6);
+}
+
+.bg-circle-blur {
+  background: conic-gradient(from 180deg at 50% 50%, #00C9A7 0deg, #00C9A7 120.07deg, #00C9A7 179.52deg, #00C9A7 241.65deg, #00C9A7 299.6deg, #00C9A7 360deg);
+  border-radius: 50%;
+  font-size: 250px;
+  height: 3em;
+  width: 3em;
+  filter: blur(300px);
+}
+
+.bg-agent-blur {
+  background: conic-gradient(from 180deg at 50% 50%, #00C9A7 0deg, #00C9A7 120.07deg, #00C9A7 179.52deg, #00C9A7 241.65deg, #00C9A7 299.6deg, #00C9A7 360deg);
+  border-radius: 100%;
+  font-size: 250px;
+  height: 3em;
+  width: 3em;
+  filter: blur(300px);
+}
+
+.bg-code-blur {
+  background: conic-gradient(from 180deg at 50% 50%, #00C9A7 0deg, #00C9A7 120.07deg, #00C9A7 179.52deg, #00C9A7 241.65deg, #00C9A7 299.6deg, #00C9A7 360deg);
+  border-radius: 50%;
+  font-size: 250px;
+  height: 3em;
+  width: 3em;
+  filter: blur(200px);
+}

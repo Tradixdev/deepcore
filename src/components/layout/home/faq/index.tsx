@@ -79,7 +79,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       className="cursor-pointer mb-4"
       onClick={() => setIsOpen(!isOpen)}
     >
-      <div className="flex w-full border border-[#EAFC35] bg-[#EAFC35]  px-10 items-center justify-between py-4 clip-custom md:py-6">
+      <div className="flex w-full border border-[#00C9A7] bg-[#00C9A7]  px-10 items-center justify-between py-4 clip-custom md:py-6">
         <div className="flex items-center gap-8">
           <span className="text-lg font-medium text-background">
             {number < 10 ? `0${number}` : number}
@@ -98,7 +98,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       </div>
       <div
         ref={contentRef}
-        className="overflow-hidden h-0 clip-custom-left bg-[#EAFC35]"
+        className="overflow-hidden h-0 clip-custom-left bg-[#00C9A7]"
         style={{
           visibility: "hidden",
           height: 0,

@@ -72,13 +72,14 @@ const Navbar = () => {
     >
       {/* Desktop Navbar */}
       <div className="hidden md:flex justify-between items-center">
-        <div className="">
-          <Image src={"/images/logo.png"} alt="Logo" width={170} height={170} />
+        <div className="flex items-center">
+          <Image src={"/images/logo2.png"} alt="Logo" width={48} height={48} />
+          <p className="text-2xl tracking-wider font-bold">Tradix</p>
         </div>
         <nav>
           <ul className="flex items-center gap-5">
             {navItems.map((item, idx) => (
-              <li key={idx} className="hover:text-[#EAFC35]">
+              <li key={idx} className="hover:text-[#F0F2F5]">
                 <a href={item.href}>{item.label}</a>
               </li>
             ))}

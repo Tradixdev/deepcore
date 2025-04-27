@@ -10,7 +10,7 @@ type Props = {
 
 const Card = ({ imgUrl, title, date, description }: Props) => {
   return (
-    <a className="clip-custom bg-[#EAFC35] duration-500 hover:-translate-y-2 px-8 py-5 text-background">
+    <a className="clip-custom bg-[#00C9A7] duration-500 hover:-translate-y-2 px-8 py-5 text-background">
       <div className="flex items-center gap-5">
         <Image
           src={imgUrl}
