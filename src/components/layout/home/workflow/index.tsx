@@ -52,7 +52,7 @@ const cards = [
 const Workflow = () => {
   return (
     <section className=" relative py-5 lg:py-20">
-      <div data-scroll data-scroll-speed="-3" className="bg-circle-blur absolute -right-[450px] top-1/2 -translate-y-1/2 z-10"></div>
+      <div data-scroll data-scroll-speed="-3" className="bg-circle-blur absolute -right-[450px] top-1/2 -translate-y-1/2 z-20"></div>
       <div data-scroll data-scroll-speed="-3" className="bg-circle-blur absolute -left-[450px] top-0 -translate-y-1/2 z-20"></div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-col gap-10 md:gap-20">
         <div
@@ -73,33 +73,37 @@ const Workflow = () => {
 
         <div className="relative flex w-full">
           {/* Grid of Cards */}
-          <div className="px-5 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-5 w-full">
+          <div className="px-5 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
             {cards.map((card) => (
               <SpotlightCard
                 key={card.id}
-                className={`bg-[#00C9A7] border-amber-300 text-black p-8 transition-all duration-100 w-full ${(card.id == 2 || card.id == 3) ? "clip-custom-left" : "clip-custom"
-                  } shadow-2xl`}
+                className={`overflow-hidden relative border border-white backdrop-blur-xl text-white transition-all rounded-3xl duration-100 card-shadow w-full 
+                  }`}
               >
-                <h2 className="text-3xl font-bold mb-2">{card.title}</h2>
-                <p className="text-lg mb-4">{card.description}</p>
-                {card.tokenCA && (
-                  <div className="text-base mb-2">
-                    <strong className="">Token CA:</strong> {card.tokenCA}
-                  </div>
-                )}
-                {card.tokenValue && (
-                  <div className="text-base mb-4">
-                    <strong className="">Token Value:</strong> {card.tokenValue}
-                  </div>
-                )}
-                <div>
-                  <strong className="">Functions:</strong>
-                  <ul className="list-disc list-inside text-base mt-2">
-                    {card.functions.map((func) => (
-                      <li key={func}>{func}</li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-full h-full rounded-full blur-2xl opacity-30 -z-20 bg-[#00C9A7]" />
+                <div className="absolute glow-blur-token bottom-0 right-0 w-full h-full -z-10" />
+                {/* <div className={`${(card.id == 2 || card.id == 3) ? "clip-custom-left" : "clip-custom"}  bg-[#00C9A7]/40 h-full p-8`}> */}
+                <div className={` h-full rounded-2xl p-8`}>
+                  <h2 className="text-3xl font-bold mb-2">{card.title}</h2>
+                  <p className="text-lg mb-4">{card.description}</p>
+                  {card.tokenCA && (
+                    <div className="text-base mb-2">
+                      <strong className="">Token CA:</strong> {card.tokenCA}
+                    </div>
+                  )}
+                  {card.tokenValue && (
+                    <div className="text-base mb-4">
+                      <strong className="">Token Value:</strong> {card.tokenValue}
+                    </div>
+                  )}
+                  <div>
+                    <strong className="">Functions:</strong>
+                    <ul className="list-disc list-inside text-base mt-2">
+                      {card.functions.map((func) => (
+                        <li key={func}>{func}</li>
+                      ))}
+                    </ul>
+                  </div></div>
               </SpotlightCard>
             ))}
           </div>

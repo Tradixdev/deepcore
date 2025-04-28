@@ -73,7 +73,7 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <div className="hidden md:flex justify-between items-center">
         <div className="flex items-center">
-          <Image src={"/images/logo2.png"} alt="Logo" width={48} height={48} />
+          {/* <Image src={"/images/logo2.png"} alt="Logo" width={48} height={48} /> */}
           <p className="text-2xl tracking-wider font-bold">Tradix</p>
         </div>
         <nav>

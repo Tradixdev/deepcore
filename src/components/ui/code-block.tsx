@@ -1,19 +1,20 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { IconCheck, IconCopy } from "@tabler/icons-react";
+import { TypingAnimation } from "../magicui/typing-animation";
 
 type CodeBlockProps = {
   language: string;
   filename: string;
   highlightLines?: number[];
 } & (
-  | {
+    | {
       code: string;
       tabs?: never;
     }
-  | {
+    | {
       code?: never;
       tabs: Array<{
         name: string;
@@ -22,7 +23,7 @@ type CodeBlockProps = {
         highlightLines?: number[];
       }>;
     }
-);
+  );
 
 export const CodeBlock = ({
   language,
@@ -33,7 +34,11 @@ export const CodeBlock = ({
 }: CodeBlockProps) => {
   const [copied, setCopied] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(0);
-
+  const [displayedCode, setDisplayedCode] = React.useState<string>("");
+  const [startedTyping, setStartedTyping] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [inView, setInView] = React.useState(false);
+  
   const tabsExist = tabs.length > 0;
 
   const copyToClipboard = async () => {
@@ -53,8 +58,43 @@ export const CodeBlock = ({
     ? tabs[activeTab].highlightLines || []
     : highlightLines;
 
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          }
+        },
+        { threshold: 0.1 }
+      );
+    
+      if (containerRef.current) {
+        observer.observe(containerRef.current);
+      }
+    
+      return () => {
+        if (containerRef.current) observer.unobserve(containerRef.current);
+      };
+    }, []);
+
+    useEffect(() => {
+      if (!activeCode || !inView) return;
+    
+      let i = 0;
+      const typingInterval = setInterval(() => {
+        if (i <= activeCode.length) {
+          setDisplayedCode(activeCode.slice(0, i));
+          i++;
+        } else {
+          clearInterval(typingInterval);
+        }
+      }, 10);
+    
+      return () => clearInterval(typingInterval);
+    }, [activeCode, inView]);
+
   return (
-    <div className="relative w-full rounded-3xl bg-black/60 border border-[#00C9A7] backdrop-blur-2xl p-4 font-mono text-sm overflow-hidden">
+    <div ref={containerRef} className="relative w-full card-shadow h-[70vh] rounded-3xl bg-black/60 border border-[#00C9A7] backdrop-blur-2xl p-4 font-mono text-sm overflow-y-scroll">
       <div data-scroll data-scroll-speed="3" className="bg-code-blur absolute left-1/2 bottom-0 -translate-y-1/2 opacity-50 -translate-x-1/2 -z-10"></div>
       <div className="flex flex-col gap-2">
         {tabsExist && (
@@ -63,11 +103,10 @@ export const CodeBlock = ({
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`px-3 !py-2 text-xs transition-colors font-sans ${
-                  activeTab === index
+                className={`px-3 !py-2 text-xs transition-colors font-sans ${activeTab === index
                     ? "text-white"
                     : "text-zinc-400 hover:text-zinc-200"
-                }`}
+                  }`}
               >
                 {tab.name}
               </button>
@@ -86,30 +125,30 @@ export const CodeBlock = ({
           </div>
         )}
       </div>
-      <SyntaxHighlighter
-        language={activeLanguage}
-        style={atomDark}
-        customStyle={{
-          margin: 0,
-          padding: 0,
-          background: "transparent",
-          fontSize: "0.875rem", // text-sm equivalent
-        }}
-        wrapLines={true}
-        showLineNumbers={true}
-        lineProps={(lineNumber) => ({
-          style: {
-            backgroundColor: activeHighlightLines.includes(lineNumber)
-              ? "rgba(255,255,255,0.1)"
-              : "transparent",
-            display: "block",
-            width: "100%",
-          },
-        })}
-        PreTag="div"
-      >
-        {String(activeCode)}
-      </SyntaxHighlighter>
+        <SyntaxHighlighter
+          language={activeLanguage}
+          style={atomDark}
+          customStyle={{
+            margin: 0,
+            padding: 0,
+            background: "transparent",
+            fontSize: "0.875rem", // text-sm equivalent
+          }}
+          wrapLines={true}
+          showLineNumbers={true}
+          lineProps={(lineNumber) => ({
+            style: {
+              backgroundColor: activeHighlightLines.includes(lineNumber)
+                ? "rgba(255,255,255,0.1)"
+                : "transparent",
+              display: "block",
+              width: "100%",
+            },
+          })}
+          PreTag="div"
+        >
+          {String(displayedCode)}
+        </SyntaxHighlighter>
     </div>
   );
 };

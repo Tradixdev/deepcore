@@ -56,7 +56,7 @@ const Showcase = () => {
       <div className="max-w-7xl space-y-10 mx-auto">
         <div className="flex justify-between flex-col lg:flex-row gap-5 lg:items-center">
           <div className="">
-            <h2 className="text-5xl font-semibold text-shadow-white">Agent Showcase</h2>
+            <h2 className="text-5xl heading capitalize font-semibold tracking-wider">Agent Showcase</h2>
             <p className="text-[#b2b2b2] text-xl">
               Experience the most valuable AI agent in web3.
             </p>

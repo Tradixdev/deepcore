@@ -214,6 +214,15 @@ body {
   }
 }
 
+@font-face {
+  font-family: Neuropol;
+  src: url("../../assets/fonts/Neuropol.otf");
+}
+
+.heading{
+  font-family: "Neuropol";
+}
+
 [data-scroll-container] {
   min-height: 100vh;
   overflow: hidden;
@@ -269,4 +278,15 @@ body {
   height: 3em;
   width: 3em;
   filter: blur(200px);
+}
+
+.card-shadow{
+  box-shadow: 0px 0px 20px #00C9A7;
+}
+
+.glow-blur-token {
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(18.5px);
 }
