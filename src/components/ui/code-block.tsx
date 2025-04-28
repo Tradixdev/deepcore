@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { IconCheck, IconCopy } from "@tabler/icons-react";
-import { TypingAnimation } from "../magicui/typing-animation";
 
 type CodeBlockProps = {
   language: string;
@@ -35,7 +34,6 @@ export const CodeBlock = ({
   const [copied, setCopied] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(0);
   const [displayedCode, setDisplayedCode] = React.useState<string>("");
-  const [startedTyping, setStartedTyping] = React.useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [inView, setInView] = React.useState(false);
   

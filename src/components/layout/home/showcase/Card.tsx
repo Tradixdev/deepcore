@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -10,7 +9,6 @@ type Props = {
 };
 
 const Card = ({ imgUrl, title, date, description }: Props) => {
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <a className="clip-custom relative bg backdrop-blur-3xl border border-[#00C9A7] duration-500 hover:-translate-y-2 px-8 py-5 text-foreground">
       <div className="flex items-center gap-5">
