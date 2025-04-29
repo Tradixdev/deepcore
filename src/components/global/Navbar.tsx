@@ -96,12 +96,13 @@ const Navbar = () => {
       <div className="md:hidden ">
         <div className="flex justify-between">
           <div className="">
-            <Image
+            {/* <Image
               src={"/images/logo.png"}
               alt="Logo"
               width={170}
               height={170}
-            />
+            /> */}
+            Tradix
           </div>
           <Sheet>
             <SheetTrigger>

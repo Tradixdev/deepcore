@@ -178,7 +178,7 @@ const FAQ: React.FC = () => {
         <div className="mb-10 md:mb-20 flex justify-center items-center">
           <div className="flex flex-col justify-center items-center">
             <div className="overflow-hidden">
-              <h2 className="text-5xl font-semibold text-shadow-white">
+              <h2 className="lg:text-5xl heading font-semibold">
                 Frequently Asked Questions
               </h2>
             </div>

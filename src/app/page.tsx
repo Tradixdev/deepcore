@@ -11,7 +11,7 @@ import Workflow from "@/components/layout/home/workflow";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <Hero />
       <Workflow />
       <Categories />

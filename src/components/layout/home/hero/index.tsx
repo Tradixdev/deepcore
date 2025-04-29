@@ -51,22 +51,22 @@ const Hero = () => {
             <div className="overflow-hidden">
               <h1
                 ref={headingRef1}
-                className="text-4xl  lg:text-7xl font-medium tracking-tight leading-snug"
+                className="text-4xl heading lg:text-6xl font-medium tracking-tight leading-snug"
               >
                 The Best{" "}
                 <span className="lg:italic font-bold bg-gradient-to-b from-[#00C9A7] to-[#fcffdf] bg-clip-text pr-5 text-transparent">
                   Web3 AI Agent Platform
-                </span>{" "}
+                </span>{" "}MCP-Powered
               </h1>
             </div>
-            <div className="overflow-hidden">
+            {/* <div className="overflow-hidden">
               <h1
                 ref={headingRef2}
-                className="text-5xl lg:text-7xl font-medium tracking-tight leading-snug"
+                className="text-5xl lg:text-6xl heading font-medium tracking-tight leading-snug"
               >
-                MCP-Powered
+                
               </h1>
-            </div>
+            </div> */}
           </div>
           <div className="flex overflow-hidden flex-col">
             <div className="overflow-hidden">
