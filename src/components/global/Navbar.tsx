@@ -4,15 +4,6 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { RainbowButton } from "../magicui/rainbow-button";
 import gsap from "gsap";
-import {
-  Sheet,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
 
 const navItems = [
   {
