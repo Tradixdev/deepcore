@@ -68,14 +68,24 @@ const Navbar = () => {
   return (
     <header
       ref={navRef1}
-      className="fixed z-[999999999] border-b top-0 w-full px-5 md:px-12 py-6 bg-black/40 backdrop-blur-2xl"
+      className="fixed z-[999999999] border-b top-0 w-full px-5 md:px-12 py-3 lg:py-6 bg-black/40 backdrop-blur-2xl"
     >
       {/* Desktop Navbar */}
       <div className="hidden md:flex justify-between items-center">
-        <div className="flex items-center">
-          {/* <Image src={"/images/logo2.png"} alt="Logo" width={48} height={48} /> */}
-          <p className="text-2xl tracking-wider font-bold">Tradix</p>
-        </div>
+      <div className="flex items-center">
+            <Image
+              src={"/images/icon.png"}
+              alt="Logo"
+              width={40}
+              height={40}
+            />
+            <Image
+              src={"/images/logo_text.png"}
+              alt="Logo"
+              width={170}
+              height={170}
+            />
+          </div>
         <nav>
           <ul className="flex items-center gap-5">
             {navItems.map((item, idx) => (
@@ -93,18 +103,23 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden ">
-        <div className="flex justify-between">
-          <div className="">
-            {/* <Image
-              src={"/images/logo.png"}
+      <div className="md:hidden">
+        <div className="flex justify-center">
+          <div className="flex items-center">
+            <Image
+              src={"/images/icon.png"}
+              alt="Logo"
+              width={40}
+              height={40}
+            />
+            <Image
+              src={"/images/logo_text.png"}
               alt="Logo"
               width={170}
               height={170}
-            /> */}
-            Tradix
+            />
           </div>
-          <Sheet>
+          {/* <Sheet>
             <SheetTrigger>
               <Menu />
             </SheetTrigger>
@@ -139,7 +154,7 @@ const Navbar = () => {
                 </div>
               </SheetFooter>
             </SheetContent>
-          </Sheet>
+          </Sheet> */}
         </div>
       </div>
     </header>

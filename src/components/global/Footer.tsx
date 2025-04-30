@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="py-10 border-t">
       <div className="max-w-7xl mx-auto flex-col lg:flex-row gap-5 flex items-center justify-between">
-        <div className="">© 2025 DeepCore. All rights reserved.</div>
+        <div className="">© 2025 Tradix. All rights reserved.</div>
         <div className="flex items-center gap-5">
           <a>Terms & Conditions</a>
           <a>Privacy & Policy</a>
