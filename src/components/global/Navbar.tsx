@@ -62,7 +62,7 @@ const Navbar = () => {
       className="fixed z-[999999999] border-b top-0 w-full px-5 md:px-12 py-3 lg:py-6 bg-black/40 backdrop-blur-2xl"
     >
       {/* Desktop Navbar */}
-      <div className="hidden md:flex justify-between items-center">
+      <div className="hidden md:flex justify-center items-center">
       <div className="flex items-center">
             <Image
               src={"/images/icon.png"}
@@ -77,7 +77,7 @@ const Navbar = () => {
               height={170}
             />
           </div>
-        <nav>
+        {/* <nav>
           <ul className="flex items-center gap-5">
             {navItems.map((item, idx) => (
               <li key={idx} className="hover:text-[#F0F2F5]">
@@ -85,12 +85,12 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-        </nav>
-        <div className="">
+        </nav> */}
+        {/* <div className="">
           <RainbowButton className="h-fit px-5 py-1 rounded-full">
             Connect Wallet
           </RainbowButton>
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile Navbar */}

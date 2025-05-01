@@ -6,7 +6,7 @@ type RainbowButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 export const RainbowButton = React.forwardRef<
   HTMLAnchorElement,
   RainbowButtonProps
->(({ children, href, className, ...props }, ref) => {
+>(({ children, href, className, ...props }) => {
   return (
     <a
       href={href}
