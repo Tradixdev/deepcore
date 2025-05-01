@@ -75,7 +75,7 @@ func main() {
     }
 }`;
     return (
-        <section className="px-5 lg:px-0 py-20 lg:py-40">
+        <section id="commands" className="px-5 lg:px-0 py-20 lg:py-40">
             <div className="max-w-7xl space-y-10 relative mx-auto">
                 <div className="space-y-4 text-center">
                     <h2 className="lg:text-6xl heading capitalize mt-4">Using Tradix&apos;s advanced features</h2>

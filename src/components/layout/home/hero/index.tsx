@@ -92,7 +92,7 @@ const Hero = () => {
           </div>
           <div className="overflow-hidden">
             <div ref={buttonRef}>
-              <RainbowButton className="rounded-full px-5 py-1">
+              <RainbowButton href="#target-section" className="rounded-full px-5 py-1">
                 Get Started
               </RainbowButton>
             </div>
