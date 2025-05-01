@@ -2,39 +2,39 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { RainbowButton } from "../magicui/rainbow-button";
+// import { RainbowButton } from "../magicui/rainbow-button";
 import gsap from "gsap";
 
-const navItems = [
-  {
-    label: "Workspace",
-    href: "/workspace",
-  },
-  {
-    label: "Agent Store",
-    href: "/agent-store",
-  },
-  {
-    label: "MCP Store",
-    href: "/mcp-store",
-  },
-  {
-    label: "A2A",
-    href: "/a2a",
-  },
-  {
-    label: "Tools",
-    href: "/tools",
-  },
-  {
-    label: "Github",
-    href: "/github",
-  },
-  {
-    label: "Docs",
-    href: "/docs",
-  },
-];
+// const navItems = [
+//   {
+//     label: "Workspace",
+//     href: "/workspace",
+//   },
+//   {
+//     label: "Agent Store",
+//     href: "/agent-store",
+//   },
+//   {
+//     label: "MCP Store",
+//     href: "/mcp-store",
+//   },
+//   {
+//     label: "A2A",
+//     href: "/a2a",
+//   },
+//   {
+//     label: "Tools",
+//     href: "/tools",
+//   },
+//   {
+//     label: "Github",
+//     href: "/github",
+//   },
+//   {
+//     label: "Docs",
+//     href: "/docs",
+//   },
+// ];
 
 const Navbar = () => {
   const navRef1 = useRef<HTMLHeadElement>(null);
