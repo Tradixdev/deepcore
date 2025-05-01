@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LocomotiveScrollContext } from "@/lib/locomotive-scroll-context";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +23,7 @@ export default function LocomotiveScrollProvider({
 }) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [hasMounted, setHasMounted] = useState(false);
+  const [scrollInstance, setScrollInstance] = useState<LocomotiveScroll | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -45,6 +47,7 @@ export default function LocomotiveScrollProvider({
           multiplier: 1,
         });
 
+        setScrollInstance(scroll); // ✅ typed correctly now
         scroll.on("scroll", ScrollTrigger.update);
 
         ScrollTrigger.scrollerProxy(scrollRef.current, {
@@ -82,6 +85,7 @@ export default function LocomotiveScrollProvider({
   if (!hasMounted) return null;
 
   return (
+    <LocomotiveScrollContext.Provider value={scrollInstance}>
     <div
       data-scroll-container
       ref={scrollRef}
@@ -91,5 +95,6 @@ export default function LocomotiveScrollProvider({
     >
       {children}
     </div>
+    </LocomotiveScrollContext.Provider>
   );
 }

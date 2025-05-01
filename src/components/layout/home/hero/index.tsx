@@ -3,6 +3,8 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Marquee from "react-fast-marquee";
+// import { useLocomotiveScroll } from "react-locomotive-scroll";
+
 
 const Hero = () => {
   const headingRef1 = useRef<HTMLDivElement>(null);
@@ -19,6 +21,8 @@ const Hero = () => {
     const paragraph2 = paragraphRef2.current;
     const button = buttonRef.current;
     const video = videoRef1.current;
+
+    // const { scroll } = useLocomotiveScroll();
 
     gsap.fromTo(
       [heading, heading2, paragraph1, paragraph2, button],
@@ -38,6 +42,19 @@ const Hero = () => {
       }
     );
   });
+
+
+  // const handleScroll = () => {
+  //   if (scroll) {
+  //     scroll.scrollTo("#target-section", {
+  //       offset: 0,
+  //       duration: 1000,
+  //       easing: [0.25, 0.0, 0.35, 1.0],
+  //     });
+  //   } else {
+  //     console.warn("LocomotiveScroll not ready");
+  //   }
+  // };
 
   return (
     <section
@@ -59,14 +76,6 @@ const Hero = () => {
                 </span>{" "}MCP-Powered
               </h1>
             </div>
-            {/* <div className="overflow-hidden">
-              <h1
-                ref={headingRef2}
-                className="text-5xl lg:text-6xl heading font-medium tracking-tight leading-snug"
-              >
-                
-              </h1>
-            </div> */}
           </div>
           <div className="flex overflow-hidden flex-col">
             <div className="overflow-hidden">

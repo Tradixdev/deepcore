@@ -66,7 +66,7 @@ const Showcase = () => {
               //   onClick={handleClick}
               className="rounded-full px-5 py-1"
             >
-              Create Agent
+              Agent Info
             </RainbowButton>
           </div>
         </div>

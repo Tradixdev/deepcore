@@ -12,7 +12,7 @@ const Footer = () => {
           <a>Privacy & Policy</a>
         </div>
         <div className="flex items-center gap-5">
-          <Link href={""}>
+          <Link href={"https://github.com/Tradixdev/deepcore"}>
             <Image
               src={"/images/9919.png"}
               alt="Twitter"

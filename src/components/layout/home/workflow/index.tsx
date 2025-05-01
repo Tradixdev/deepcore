@@ -51,7 +51,7 @@ const cards = [
 
 const Workflow = () => {
   return (
-    <section className=" relative py-5 lg:py-20">
+    <section id="target-section"  className=" relative py-5 lg:py-20">
       <div data-scroll data-scroll-speed="-3" className="bg-circle-blur absolute -right-[450px] top-1/2 -translate-y-1/2 z-20"></div>
       <div data-scroll data-scroll-speed="-3" className="bg-circle-blur absolute -left-[450px] top-0 -translate-y-1/2 z-20"></div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-col gap-10 md:gap-20">
@@ -77,7 +77,7 @@ const Workflow = () => {
             {cards.map((card) => (
               <SpotlightCard
                 key={card.id}
-                className={`overflow-hidden relative border border-white backdrop-blur-xl text-white transition-all rounded-3xl duration-100 card-shadow w-full 
+                className={`overflow-hidden relative border border-white backdrop-blur-xl text-white transition-all rounded-3xl duration-100 card-shadow w-full
                   }`}
               >
                 <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-full h-full rounded-full blur-2xl opacity-30 -z-20 bg-[#00C9A7]" />
