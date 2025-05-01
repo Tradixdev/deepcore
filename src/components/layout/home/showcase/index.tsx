@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import Card from "./Card";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LocomotiveScroll from "locomotive-scroll";
 // mport toast from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -51,6 +52,26 @@ const Showcase = () => {
   //     });
   //   };
 
+  const scrollRef = useRef<LocomotiveScroll | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      scrollRef.current = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]") as HTMLElement,
+        smooth: true,
+      });
+    }
+
+    return () => {
+      scrollRef.current?.destroy();
+    };
+  }, []);
+
+
+  const handleScroll = () => {
+    scrollRef.current?.scrollTo("#commands");
+  };
+
   return (
     <section className="px-5 lg:px-0 py-20 lg:py-40">
       <div className="max-w-7xl space-y-10 mx-auto">
@@ -63,8 +84,8 @@ const Showcase = () => {
           </div>
           <div className="">
             <RainbowButton
-              //   onClick={handleClick}
-               href="#commands"
+                onClick={handleScroll}
+              //  href="#commands"
               className="rounded-full px-5 py-1"
             >
               Agent Info

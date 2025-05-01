@@ -1,5 +1,6 @@
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import gsap from "gsap";
+import LocomotiveScroll from "locomotive-scroll";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Marquee from "react-fast-marquee";
@@ -56,6 +57,26 @@ const Hero = () => {
   //   }
   // };
 
+  const scrollRef = useRef<LocomotiveScroll | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      scrollRef.current = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]") as HTMLElement,
+        smooth: true,
+      });
+    }
+
+    return () => {
+      scrollRef.current?.destroy();
+    };
+  }, []);
+
+
+  const handleScroll = () => {
+    scrollRef.current?.scrollTo("#target-section");
+  };
+
   return (
     <section
       data-scroll
@@ -92,7 +113,7 @@ const Hero = () => {
           </div>
           <div className="overflow-hidden">
             <div ref={buttonRef}>
-              <RainbowButton href="#target-section" className="rounded-full px-5 py-1">
+              <RainbowButton onClick={handleScroll} className="rounded-full px-5 py-1">
                 Get Started
               </RainbowButton>
             </div>
