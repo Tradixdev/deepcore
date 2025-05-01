@@ -137,32 +137,37 @@ const Hero = () => {
         />
         {/* <div className="absolute hero top-0 left-0 min-h-screen w-full z-10 "></div> */}
       </div>
-      <div className="w-full mx-auto mt-[400px] lg:mt-[300px] text-center space-y-10">
+      <div className="max-w-7xl mx-auto mt-[400px] lg:mt-[300px] z-50 text-center space-y-10">
         <h3 className="max-w-80 mx-auto text-xl text-[#b2b2b2]">
           Supported by cutting-edge encryption and AI technology
         </h3>
-        <Marquee autoFill gradient gradientColor="" className="-z-10">
-          <Image
-            src={"/images/9919.png"}
-            alt="Twitter"
-            width={40}
-            height={40}
-            className="mx-5"
-          />
-          <Image
-            src={"/images/twitter.svg"}
-            alt="Twitter"
-            width={40}
-            height={40}
-            className="mx-5"
-          />
-          <Image
-            src={"/images/telegram.png"}
-            alt="Twitter"
-            width={40}
-            height={40}
-            className="mx-5"
-          />
+        <Marquee autoFill gradient gradientColor="" className="">
+          <a href="https://github.com/Tradixdev/deepcore/">
+            <Image
+              src={"/images/9919.png"}
+              alt="Twitter"
+              width={40}
+              height={40}
+              className="mx-5"
+            /></a>
+          <a>
+            <Image
+              src={"/images/twitter.svg"}
+              alt="Twitter"
+              width={40}
+              height={40}
+              className="mx-5"
+            />
+          </a>
+          <a>
+            <Image
+              src={"/images/telegram.png"}
+              alt="Twitter"
+              width={40}
+              height={40}
+              className="mx-5"
+            />
+          </a>
         </Marquee>
       </div>
     </section>
